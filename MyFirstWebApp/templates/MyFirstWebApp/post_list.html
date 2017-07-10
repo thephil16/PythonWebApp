@@ -9,8 +9,11 @@
         <h1><a href="">Philip's Stupid Site</a></h1>
     </div>
     <div>
-        <p>Hi there!</p>
-        <p>It works!</p>
+        {%  for post in posts %}
+            <p>Post Date: {{ post.published_date }}</p>
+            <h2><a href="">{{ post.title }}</a></h2>
+            <p>{{ post.text|linebreaksbr }}</p>
+        {% endfor %}
     </div>
 </body>
 </html>
